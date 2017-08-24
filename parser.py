@@ -63,7 +63,7 @@ query_part = '&tags=%D0%BA%D0%BD%D0%B8%D0%B3%D0%B0'
 
 total_pages = '2' #get_total_pages(get_html(url, useragent))
 
-for i in range (1, int(total_pages)):
+for i in range (1, int(total_pages)+1):
     url_gen = base_url + page_part + str(i) + query_part
     print(url_gen)
     html = get_html(url_gen, useragent)
