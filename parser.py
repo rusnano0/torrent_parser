@@ -35,7 +35,7 @@ def get_page_data(html):
             title = item.find('td', class_='name').find('a').get('title')
             size = item.find('td', class_='size').get_text()
             magnet = item.find('td', class_='download').find('a').get('data-default')
-            torrent = item.find('td', class_='download').find('a').get('data-torrent')
+            torrent = item.find('td', class_='download').find('a').get('data-not-installed')
             
             url= item.find('td', class_='name').find('a').get('href')
             description_soup = BeautifulSoup(get_html(url, useragent), 'lxml')
