@@ -1,7 +1,7 @@
 # Torrent parser with connection to MongoDB
 
 ### Description
-Script that gets all the torrents (currently only from torrention.me book section) <br />
+Script that gets all the torrents (currently only from **torrentino.me** book section) <br />
 Script connect's through pymongo to the local MongoDB Server and insert's all the information in the DB. <br />
 To function properly: <br />
 install MongoDB and start the server OR change the connection OR change the code. <br />
