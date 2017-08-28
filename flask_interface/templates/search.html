@@ -1,0 +1,44 @@
+{% extends "index.html" %}
+
+{% block content %}
+<div class="container">
+	<table class="table table-striped">
+		<thead>
+			<tr>
+				<th><a href="">Title</a>
+					<span class="badge"> results</span>
+				</th>
+
+				<th>
+					<a href="">Size</a>
+				</th>
+
+				<th>Download</th>
+
+				<th>
+					<a href="">Relevance</a>
+				</th>
+
+			</tr>
+		</thead>
+		<tbody>
+			<!-- next var sent by function in view -->
+			{% for data in result %}
+			<tr>
+				<!-- next vars from schema of a collection in mongo db -->
+				<td class="title"><a href="{{ data.url }}" target="_blank">{{ data.title }}</a></td>
+
+				<td>{{ data.size }}</td>
+
+				<td><a href="{{ data.torrent }}">Torrent</a> / <a href="{{ data.magnet }}">Magnet</a></td>
+
+				<td>{{ data.score }}</td>
+				
+			{% endfor %}  
+			</tr>
+
+		</tbody>
+
+	</table>
+</div>
+{% endblock %}

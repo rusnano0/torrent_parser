@@ -38,6 +38,7 @@ def get_page_data(html):
     items = soup.find('table', class_='table-list torrents').find_all('tr', class_='item')
     
     for c, item in enumerate(items, 1):
+        time.sleep(1)
         try:
             title = item.find('td', class_='name').find('a').get('title')
             size = item.find('td', class_='size').get_text()
@@ -50,7 +51,7 @@ def get_page_data(html):
                 description =  description_soup.find('div', class_='plate description').get_text()
             except:
                 description = ''
-                
+#                .sort([('score', {'$meta': 'textScore'})])
             i = {
                     'title' : title,
                     'url' : url,
@@ -71,7 +72,7 @@ base_url = 'http://www.torrentino.me/torrents?'
 page_part = 'page='
 query_part = '&tags=%D0%BA%D0%BD%D0%B8%D0%B3%D0%B0'
 
-total_pages = 2 #get_total_pages(get_html(url, useragent))
+total_pages = 100 #get_total_pages(get_html(url, useragent))
 
 for i in range(1, int(total_pages)+1):
     url_gen = base_url + page_part + str(i) + query_part
